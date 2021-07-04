@@ -1,0 +1,36 @@
+import java.util.*;
+class palindrome
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n;
+        System.out.println("Enter the number");
+        n=sc.nextInt();
+        if(isPalin(n))
+        {
+            System.out.println("True");
+    }
+    else
+    {
+        System.out.println("False");
+    }
+}
+    public static int palin(int n,int r)
+    {
+        int d;
+        if(n==0)
+        {
+            return r;
+    }
+    d=n%10;
+    r=r*10+d;
+    return palin(n/10,r);
+}
+public static boolean isPalin(int n)
+{
+    int r=0;
+    r=palin(n,r);
+    return (n==r);
+}
+}
