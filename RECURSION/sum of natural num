@@ -1,0 +1,25 @@
+import java.util.*;
+class sumnatural
+{
+    public static void main(String args[])
+    
+    {
+        Scanner sc = new Scanner(System.in);
+        int n;
+        System.out.println("Enter the number");
+        n=sc.nextInt();
+        System.out.print(sumn(n));
+    }
+    public static int sumn(int n)
+    {
+        if(n==0)
+        {
+            return 0;
+        }
+        else
+        {
+            return n+sumn(n-1);
+        }
+    }
+}
+    
