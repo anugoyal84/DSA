@@ -1,0 +1,45 @@
+import java.util.*;
+class firstindex
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n,n1;
+        System.out.println("Enter the size of the array");
+        n=sc.nextInt();
+        int a[]=new int[n];
+        System.out.println("Enter the elements");
+        for(int i=0;i<n;i++)
+        {
+            a[i]=sc.nextInt();
+        }
+        System.out.println("Enter the number you want to find");
+        n1=sc.nextInt();
+        System.out.print(index(a,n1));
+    }
+    public static int index(int a[],int n1 )
+    {
+        if(a.length==0)
+        {
+            return -1;
+        }
+            if(a[0]==n1)
+            {
+                return 0;
+            }
+        int b[]=new int[a.length-1];
+        for(int i=1;i<a.length;i++)
+        {
+            b[i-1]=a[i];
+        }
+        int first = index(b,n1);
+        if(first==-1)
+        {
+            return -1;
+        }
+        else
+        {
+           return first+1;
+        }
+    }
+}
