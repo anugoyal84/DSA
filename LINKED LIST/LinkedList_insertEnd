@@ -1,0 +1,56 @@
+import java.util.*;
+class LinkedList_End
+{
+    class Node
+    {
+        int data;
+        Node next;
+        public Node(int data)
+        {
+            this.data=data;
+            this.next=null;
+        }
+    }
+    public Node head=null;
+    public Node tail=null;
+    public void End(int data)
+    {
+        Node newData = new Node(data); //Create a new Node
+        if(head==null) //checks if the list is empty or not 
+        {
+            head=newData;  //if the list is empty, both head and tail will point to the new node
+            tail=newData;
+        }
+        else
+        {
+            tail.next=newData; //new node will be added after tail such that tail's next will point to new node
+            tail=newData; // now that next will become the new node
+        }
+    }
+    public void Display()
+    {
+        Node cur=head;
+        if(head==null)
+        {
+            System.out.println("Empty List");
+        }
+        while(cur!=null)
+        {
+            System.out.println(cur.data);
+            cur=cur.next;
+        }
+        System.out.println();
+    }
+    public static void main(String args[])
+    {
+        LinkedList_End l = new LinkedList_End();
+        l.End(1);
+        l.Display();
+        l.End(2);
+        l.Display();
+        l.End(3);
+        l.Display();
+        l.End(4);
+        l.Display();
+    }
+}
